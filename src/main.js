@@ -9,8 +9,7 @@ Vue.prototype.$echarts = echarts
 // 将自动注册所有组件为全局组件
 import dataV from '@jiaminghi/data-view'
 
-// main.js
-import 'lib-flexible'
+
 
 Vue.use(dataV)
 Vue.use(Antd)

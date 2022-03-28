@@ -22,14 +22,7 @@ exports.cssLoaders = function (options) {
     }
   }
   
-// 增加代码，px转rem配置（需要将px2remloader添加进loaders数组中）
-const px2remLoader = {
-  loader: 'px2rem-loader',
-  options: {
-    remUnit: 192  //根据视觉稿，rem为px的十分之一，1920px  192 rem
-    // remPrecision: 8//换算的rem保留几位小数点
-  }
-}
+
 
   const postcssLoader = {
     loader: 'postcss-loader',
@@ -40,7 +33,7 @@ const px2remLoader = {
 
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    const loaders = options.usePostCSS ? [cssLoader, postcssLoader, px2remLoader] : [cssLoader, px2remLoader]
+    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
     if (loader) {
       loaders.push({
